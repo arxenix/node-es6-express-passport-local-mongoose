@@ -1,0 +1,17 @@
+extends layout
+block content
+  .container
+    h1 Say something meaningful here.
+    p.lead Say something worthwhile here.
+    a(href="/") Go home
+    br
+    a(href="/account/ping") Ping
+    br
+    br
+    if (!user)
+      a(href="/account/login") Login
+      br
+      a(href="/account/register") Register
+    if (user)
+      p You are currently logged in as #{user.username}
+      a(href="/account/logout") Logout
